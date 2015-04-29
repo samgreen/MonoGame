@@ -321,8 +321,9 @@ namespace Microsoft.Xna.Framework.Graphics
 
 
 			GL.Clear(bufferMask);
+			#if !MONOMAC
             GraphicsExtensions.CheckGLError();
-           		
+			#endif
             // Restore the previous render state.
 		    ScissorRectangle = prevScissorRect;
 		    DepthStencilState = prevDepthStencilState;
